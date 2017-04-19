@@ -74,7 +74,7 @@ Depending on our estimation of the risk value of the user, we apply the followin
 
 #### Banana
 
-- We won't offer insurance for bananas unless their number of black is between 3 and 12 (inclusive).
+- We won't offer insurance for bananas unless their number of black spots is between 3 and 12 (inclusive).
 - We also won't offer banana insurance to users with a risk value of more than 200 (our investigations show they tend to lose them)
 
 #### Bicycle
@@ -90,7 +90,7 @@ You can use any programming language you want to solve the challenge and you won
 
 We recommend you to extend these tests a bit, or if you don't use Scala to provide tests of your own. Even if you don't use Scala, they can help as examples, though.
 
-Please commit regularly changes in git (we won't penalize experimentation, quite the opposite actually) and when you finish, send us a git bundle with, from inside the repository:
+Please commit regularly changes in git (we won't penalize experimentation, quite the opposite actually) and when you finish, send us a git bundle. To produce it, run, from inside the repository, the following:
 
 ```
 $ git bundle $myName-coya-challenge.git
