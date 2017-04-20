@@ -92,7 +92,7 @@ We recommend you to extend these tests a bit, or if you don't use Scala to provi
 Please commit regularly changes in git (we won't penalize experimentation, quite the opposite actually) and when you finish, send us a git bundle. To produce it, run, from inside the repository, the following:
 
 ```
-$ git bundle $myName-coya-challenge.git
+$ git bundle create $myName-coya-challenge.git master
 ```
 
 This will generate a git bundle file that you can send us.
