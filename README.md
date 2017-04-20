@@ -1,4 +1,4 @@
-# Coya Challenge
+ # Coya Challenge
 
 ## Our Problem
 
@@ -68,7 +68,6 @@ Depending on our estimation of the risk value of the user, we apply the followin
 |----------------------|-----------------------------|
 | Less than 100        | 0.7                         |
 | From 100 to 299      | 1                           |
-| From 300 to 500      | 1.3                         |
 | From 300 to 501      | 2.5                         |
 | 502 or more          | We won't offer an insurance |
 
