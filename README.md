@@ -30,11 +30,13 @@ For products we have modelled in our system the following types:
 
 ## Rules
 
-We want to build a quote processor that will receive a user and a product, and return whether we reject the user or not, and if not, for how much premium will we insure the product in euros per year.
+We want to build a quote processor that will receive a user and a set of products, and return whether we reject the user or not, and if not, for how much premium will we insure the products in euros per year.
 
 To ensure this, we have a set of rules to follow.
 
-Each product will have a base premium value, that multiplied by the product value will give an subtotal for the premium. To this subtotal, we must add a surcharge that depends on the product type and maybe on other rules. Each surcharge is multiplied to the base value.
+Each product will have a base premium value, that multiplied by the product value will give a subtotal for the product's premium. To this subtotal, we must add a surcharge that depends on the product type and maybe on other rules. Each surcharge is multiplied to the base value.
+
+Then, for all the products, if for one the rules say that it is un-insurable, then the final result given is that we won't offer an insurance. If no product is un-insurable, then we add all the premiums and that is the quote we return to the user.
 
 ### Base surcharge value per product
 
@@ -60,7 +62,7 @@ Depending on our estimation of the risk value of the user, we apply the followin
 
 #### House
 
-- If the price value of a house is bigger than 10_000_000, we have a surcharge of 1.15.
+- If the price value of _any_ house is bigger than 10_000_000, _all_ houses have a surcharge of 1.15
 - If size of a house is of more than 1000 square meters, or less than 30, we won't insure it.
 - There's another surcharge depending on the risk value of the address of the house:
 

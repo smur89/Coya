@@ -21,7 +21,7 @@ class CoyaProcessorSpec extends FlatSpec with Matchers {
    = 630 € per year
    */
   "userOne with coolHouse" should "receive a good offer" in {
-    CoyaProcessor.priceFor(userOne, coolHouse) shouldEqual Some(BigDecimal(630))
+    CoyaProcessor.priceFor(userOne, List(coolHouse)) shouldEqual Some(BigDecimal(630))
   }
 
   /*
@@ -35,6 +35,6 @@ class CoyaProcessorSpec extends FlatSpec with Matchers {
    premium is bigger than 100 €, we won't offer him insurance.
    */
   "userTwo with funBike" should "be denied" in {
-    CoyaProcessor.priceFor(userTwo, funBike) shouldEqual None
+    CoyaProcessor.priceFor(userTwo, List(funBike)) shouldEqual None
   }
 }
