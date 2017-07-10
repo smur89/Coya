@@ -1,4 +1,4 @@
- # Coya Challenge
+# Coya Challenge
 
 ## Our Problem
 

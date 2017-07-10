@@ -16,7 +16,7 @@ class CoyaProcessorSpec extends FlatSpec with Matchers {
   /*
    1,000,000 * // house value
    0.03 * // house base premium value
-   0.07 * // house risk surcharge
+   0.7 * // house risk surcharge
    0.3 // user risk surcharge
    = 630 € per year
    */
