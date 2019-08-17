@@ -1,7 +1,5 @@
 package coya.quotes
 
-import org.scalatest._
-
 class HouseProcessorSpec extends BaseSpec {
 
   /*
@@ -21,7 +19,7 @@ class HouseProcessorSpec extends BaseSpec {
    0.7 * // house risk surcharge                    0.7 * // house risk surcharge
    0.3 * // user risk surcharge                     0.3 // user risk surcharge
    1.15 // Expensive House surcharge                1.15 // Expensive House surcharge
-   = 724.50 € per year                              = 772,450.01 € per year
+   = 724.50 € per year                              = 72450.007245 € per year
 
    = 73174.507245 € per year
    */

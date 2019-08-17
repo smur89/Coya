@@ -7,5 +7,4 @@ object HelicopterProcessor extends ProductProcessor[Helicopter] {
 
   override def quote(u: User, p: Seq[Helicopter]): Seq[ProductQuote] = ???
 
-  override def calculatePremium(product: Helicopter): BigDecimal = ???
 }

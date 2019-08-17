@@ -13,7 +13,7 @@ object BananaProcessor extends ProductProcessor[Banana] {
   }
 
   override def quote(u: User, p: Seq[Banana]): Seq[ProductQuote] = p.map(banana => {
-    ProductQuote(banana, if (isInsurable(u, banana)) Some(calculatePremium(banana)) else None)
+    ProductQuote(banana, if (isInsurable(u, banana)) calculatePremium(u, banana) else None)
   })
 
 }

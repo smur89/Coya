@@ -2,13 +2,14 @@ package coya.quotes
 
 class BananaProcessorSpec extends BaseSpec {
 
-/*
- 0.50 * // Product Value
- 1.15 // Base Premium Multiplier
- = 0.575 € per year
- */
+  /*
+   0.50 * // Product Value
+   1.15 // Base Premium Multiplier
+   0.3 // user risk surcharge
+   = 0.1725 € per year
+   */
   "userOne with justRightBanana" should "receive no offer" in {
-    CoyaProcessor.priceFor(userOne, List(justRightBanana)) shouldEqual Some(BigDecimal(0.575))
+    CoyaProcessor.priceFor(userOne, List(justRightBanana)) shouldEqual Some(BigDecimal(0.1725))
   }
 
   "userOne with cleanBanana" should "receive no offer" in {

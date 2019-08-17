@@ -11,10 +11,10 @@ object BicycleProcessor extends ProductProcessor[Bicycle] {
 
   override def quote(u: User, p: Seq[Bicycle]): Seq[ProductQuote] = {
     p.map(bicycle => {
-      val premium = calculatePremium(bicycle)
-      ProductQuote(bicycle, if (premium > MaxPremiumForRiskyUsers && u.risk >= MaxUserRisk) None else Some(premium))
+      val premium = calculatePremium(u, bicycle)
+      ProductQuote(bicycle, if (premium > Some(MaxPremiumForRiskyUsers) && u.risk >= MaxUserRisk) None else premium)
     })
   }
 
-  override def calculatePremium(product: Bicycle): BigDecimal = super.calculatePremium(product) + (product.gears * GearsSurcharge)
+  override def calculatePremium(u: User, product: Bicycle) = super.calculatePremium(u, product).map(_ + (product.gears * GearsSurcharge))
 }

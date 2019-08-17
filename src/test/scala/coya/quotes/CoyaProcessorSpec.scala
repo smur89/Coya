@@ -1,6 +1,6 @@
 package coya.quotes
 
-class CoyaProcessorSpec extends BaseSpec  {
+class CoyaProcessorSpec extends BaseSpec {
 
 
   /*

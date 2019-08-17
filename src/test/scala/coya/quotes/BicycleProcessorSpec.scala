@@ -20,9 +20,10 @@ class BicycleProcessorSpec extends BaseSpec {
  1000 * // bicycle value
  0.10 + // bicycle base premium value
  18 * 0.08 // gears surcharge
- = 101.44 € per year
+ 0.3 // user risk surcharge
+ = 31.44€ per year
  */
   "userOne with funBike" should "receive a good offer" in {
-    CoyaProcessor.priceFor(userOne, List(funBike)) shouldEqual Some(BigDecimal(101.44))
+    CoyaProcessor.priceFor(userOne, List(funBike)) shouldEqual Some(BigDecimal(31.44))
   }
 }

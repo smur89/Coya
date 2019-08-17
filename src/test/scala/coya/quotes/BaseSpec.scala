@@ -3,10 +3,10 @@ package coya.quotes
 import coya.models._
 import org.scalatest.{FlatSpec, Matchers}
 
-trait BaseSpec extends FlatSpec with Matchers{
+trait BaseSpec extends FlatSpec with Matchers {
 
   val goodAddress = Address(1, 10)
-  val badAddress = Address(1, 500)
+  val badAddress = Address(1, 600)
 
   val userOne = User(1, goodAddress, 10)
   val userTwo = User(2, badAddress, 150)
@@ -14,7 +14,7 @@ trait BaseSpec extends FlatSpec with Matchers{
 
   val funBike = Bicycle(1, BigDecimal(1000), 18)
 
-  val coolHouse = House(2, BigDecimal(1000000), goodAddress, 40)
+  val coolHouse = House(2, BigDecimal(100000), goodAddress, 40)
   val chillHouse = House(2, BigDecimal(10000001), goodAddress, 40)
   val ganglandHouse = House(2, BigDecimal(10000001), badAddress, 40)
   val hobbitHouse = House(2, BigDecimal(10000001), badAddress, 30)
