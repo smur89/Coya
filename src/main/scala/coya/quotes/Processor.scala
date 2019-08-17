@@ -14,13 +14,18 @@ object CoyaProcessor extends Processor {
     if (decimals.nonEmpty) Some(decimals.sum) else None
   }
 
-  private def getQuotesPerProduct[T <: Product](u: User, p: Seq[Product]): Seq[ProductQuote] =
-    p.foldLeft(Seq.empty[ProductQuote])((quotes, product) => quotes ++ {
+  private def getQuotesPerProduct[T <: Product](u: User, p: Seq[Product]): Seq[ProductQuote] = {
+    val (houses: Seq[House], others) = p.partition {
+      case _: House => true
+      case _ => false
+    }
+    HouseProcessor.quote(u, houses) ++ others.foldLeft(Seq.empty[ProductQuote])((quotes, product) => quotes ++ {
       product match {
-        case house: House => HouseProcessor.quote(u, Seq(house))
         case banana: Banana => BananaProcessor.quote(u, Seq(banana))
         case bicycle: Bicycle => BicycleProcessor.quote(u, Seq(bicycle))
+        case helicopter: Helicopter => HelicopterProcessor.quote(u, Seq(helicopter))
+        case house: House => HouseProcessor.quote(u, Seq(house))
       }
     })
-
+  }
 }
