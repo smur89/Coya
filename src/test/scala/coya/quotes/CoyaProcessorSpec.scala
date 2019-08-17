@@ -13,7 +13,7 @@ class CoyaProcessorSpec extends BaseSpec  {
    Given that userTwo has a risk value of more than 150 and the total
    premium is bigger than 100 €, we won't offer him insurance.
    */
-  "userTwo with funBike" should "be denied" in {
-    CoyaProcessor.priceFor(userTwo, List(funBike)) shouldEqual None
+  "userTwo with all products" should "be denied" in {
+    CoyaProcessor.priceFor(userTwo, List(funBike, ganglandHouse, justRightBanana)) shouldEqual None
   }
 }
